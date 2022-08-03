@@ -73,8 +73,10 @@ const goDown = () => {
 
 if (document.getElementById("reach-out")) {
   document.getElementById("reach-out").addEventListener("click", openCard);
-  document.getElementById("close-btn").addEventListener("click", closeCard);
 }
+
+document.getElementById("leave-a-message").addEventListener("click", openCard);
+document.getElementById("close-btn").addEventListener("click", closeCard);
 
 if (menuIcon) {
   menuIcon.addEventListener("click", openMenu);
