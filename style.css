@@ -1,0 +1,798 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: black;
+  font-family: roboto, sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+header {
+  background-image: url(images/showcase.jpg);
+  background-position-y: -7.5rem;
+  background-size: cover;
+  height: 200vh;
+  width: 100vw;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.header-text-container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 25%;
+}
+
+nav {
+  background: #000942;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+nav.active {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5rem;
+}
+
+nav ul #menu {
+  display: none;
+  font-size: 1.5em;
+}
+
+nav li {
+  margin: 0 1.2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  padding: 0 0.3rem;
+  font-size: 1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s color;
+}
+
+nav a:hover {
+  color: #e32fff;
+}
+
+#work,
+#about,
+#menu-card a {
+  position: relative;
+  transition: 0.5s all;
+}
+
+#work:after,
+#about:after,
+#menu-card a:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #e32fff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+#work:hover:after,
+#about:hover:after,
+#menu-card a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+#menu-icon,
+#close-icon {
+  color: white;
+}
+
+#menu-icon:hover,
+#close-icon:hover {
+  color: #e32fff;
+  cursor: pointer;
+}
+
+#close-icon {
+  display: none;
+  font-size: 1.7rem;
+}
+
+nav img {
+  width: 100px;
+  margin-left: 3.7rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  animation: rotate infinite 7s linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+header h1 {
+  text-transform: uppercase;
+  color: white;
+  font-size: 5rem;
+  font-family: "Titillium Web", sans-serif;
+  line-height: 0.9;
+  font-weight: 700;
+  width: 300px;
+  margin: 4rem;
+}
+
+header h1 span {
+  color: #e32fff;
+  font-weight: 900;
+  font-size: 7rem;
+  line-height: 0.8;
+}
+
+.arrow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  bottom: 1.5rem;
+}
+
+.arrow-container:hover #down-1,
+.arrow-container:hover #down-2 {
+  color: #eb7dfc;
+}
+
+.fa-angle-down {
+  color: #e32fff;
+  font-size: 2rem;
+  margin: -0.6rem;
+}
+
+#down-1 {
+  animation: blink 1.2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0% {
+    margin-top: 0rem;
+  }
+
+  50% {
+    margin-top: 0.6rem;
+  }
+
+  100% {
+    margin-top: 0rem;
+  }
+}
+
+main {
+  padding: 4rem;
+}
+
+main img {
+  width: 100%;
+}
+
+.images {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.img-container-1,
+.img-container-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+}
+
+.blobs {
+  padding: 3rem;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.blob-1 {
+  background-color: #5c44ff;
+  border-radius: 60% 40% 59% 41% / 38% 37% 63% 62%;
+  bottom: 5rem;
+  left: 5rem;
+}
+
+.blobs h3 {
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1;
+  font-size: 3rem;
+}
+
+.blobs h3 span {
+  color: #e32fff;
+  font-weight: 900;
+  line-height: 0.8;
+  font-size: 3.5rem;
+}
+
+.blob-1 p {
+  color: rgb(230, 230, 230);
+  font-size: 1rem;
+  padding-top: 1rem;
+}
+
+aside {
+  position: fixed;
+  left: 0;
+  top: 70%;
+}
+
+aside ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  padding-left: 0.5rem;
+  color: white;
+  font-size: 2rem;
+}
+
+aside li {
+  cursor: pointer;
+}
+
+aside li:hover {
+  color: #e32fff;
+}
+
+#twitter,
+#instagram,
+#linkedin,
+#pinterest {
+  animation: toggle infinite 2s;
+}
+#instagram {
+  animation-delay: 0.25s;
+}
+#linkedin {
+  animation-delay: 0.5s;
+}
+#pinterest {
+  animation-delay: 0.75s;
+}
+
+@keyframes toggle {
+  0% {
+    color: white;
+  }
+  50% {
+    color: #e32fff;
+  }
+  100% {
+    color: white;
+  }
+}
+
+#about-twitter,
+#about-instagram,
+#about-linkedin,
+#about-pinterest {
+  animation: about-toggle infinite 2s;
+  cursor: pointer;
+}
+#about-instagram {
+  animation-delay: 0.25s;
+}
+#about-linkedin {
+  animation-delay: 0.5s;
+}
+#about-pinterest {
+  animation-delay: 0.75s;
+}
+
+@keyframes about-toggle {
+  0% {
+    color: black;
+  }
+  50% {
+    color: #e32fff;
+  }
+  100% {
+    color: black;
+  }
+}
+
+footer {
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  font-size: 0.9rem;
+}
+
+#about-page-main {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 5.5rem;
+}
+
+#profile,
+#about {
+  width: 100%;
+}
+
+#profile h2 {
+  color: #5c44ff;
+  text-align: center;
+  line-height: 0.8;
+  font-size: 6rem;
+  font-weight: 900;
+  font-family: "Titillium Web", sans-serif;
+  margin-bottom: 3rem;
+}
+
+#profile img {
+  width: 100%;
+}
+
+#about-briana {
+  margin-top: 12.5rem;
+}
+
+#about-briana h3 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: none;
+  margin-bottom: 2rem;
+}
+
+#about-briana p {
+  color: rgb(53, 53, 53);
+}
+
+#about-briana p span {
+  color: #e32fff;
+  cursor: pointer;
+}
+
+#more-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  width: 100%;
+  margin-top: 5rem;
+}
+
+#more-info h3 {
+  font-weight: 700;
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+#social-media a {
+  color: black;
+}
+
+#social-media h3 {
+  width: 250px;
+  margin-top: 2.3rem;
+  font-size: 1.2rem;
+}
+
+#social-media ul {
+  list-style: none;
+  padding: 0;
+}
+
+#social-media li {
+  font-size: 3rem;
+}
+
+#clients {
+  background-color: #5c44ff;
+  color: white;
+  padding: 2rem;
+  padding-top: 0;
+}
+
+#clients h3 {
+  margin-top: 2rem;
+}
+
+#clients p {
+  color: white;
+}
+
+#about-page-footer {
+  color: #5c44ff;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 90vh;
+  width: 50%;
+  position: fixed;
+  top: 5%;
+  left: 25%;
+  padding: 3rem;
+  z-index: 5;
+  background-color: white;
+  display: none;
+}
+
+#contact-form .title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  font-size: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+#contact-form .title button {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+#contact-form .title button:hover {
+  color: rgb(235, 1, 1);
+  font-size: 1.6rem;
+}
+
+#contact-form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 400px;
+}
+
+#contact-form div {
+  margin-bottom: 1.2rem;
+}
+
+#contact-form label {
+  font-size: 0.9rem;
+}
+
+#contact-form form input,
+#contact-form form textarea {
+  padding: 0.7rem;
+  width: 100%;
+  border: solid 1px lightgray;
+  background: #fafafa;
+}
+
+#contact-form .name-inputs {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+#contact-form #fname,
+#contact-form #lname {
+  display: inline;
+}
+
+#contact-form .name label {
+  width: 49%;
+  display: inline-block;
+}
+
+#contact-form #fn,
+#contact-form #ln {
+  font-size: 0.8rem;
+}
+
+#contact-form input[type="submit"] {
+  background: black;
+  color: white;
+  width: 120px;
+  padding: 0.7em 0;
+  transition: 0.3s all;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+#contact-form input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: rgb(73, 73, 73);
+}
+
+#overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+#menu-card,
+#menu-card ul,
+#menu-card a {
+  display: none;
+}
+
+.fa-angle-up {
+  color: #e32fff;
+  font-size: 2.5rem;
+  position: fixed;
+  right: 20px;
+  bottom: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  animation: infinite 1.2s ease-in-out blink-up;
+  transition: 0.3s all;
+}
+
+.fa-angle-up:hover {
+  color: #eb7dfc;
+}
+
+@keyframes blink-up {
+  0% {
+    bottom: 1.5rem;
+  }
+  50% {
+    bottom: 2.3rem;
+  }
+  100% {
+    bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 90vh;
+    background-position: center;
+  }
+
+  .header-text-container {
+    position: relative;
+    top: 4.5rem;
+  }
+
+  nav img {
+    width: 80px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  nav ul li {
+    display: none;
+    padding-right: 0;
+  }
+
+  nav ul #menu {
+    display: block;
+  }
+
+  #about:after,
+  #work:after,
+  #about:after:hover,
+  #work:after:hover {
+    content: none;
+  }
+
+  header h1 {
+    font-size: 3.5rem;
+    padding-top: 2rem;
+  }
+
+  header h1 span {
+    font-size: 5rem;
+  }
+
+  .arrow-container {
+    top: 5rem;
+  }
+
+  .fa-angle-down {
+    font-size: 1.5rem;
+    margin-top: -0.3rem;
+  }
+
+  .images {
+    gap: 1rem;
+  }
+
+  .img-container-1,
+  .img-container-2 {
+    gap: 1rem;
+  }
+
+  aside ul {
+    font-size: 1.7rem;
+    padding-left: 1rem;
+  }
+
+  aside {
+    top: 74%;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h3 span {
+    font-size: 2.5rem;
+  }
+
+  #about-page-main {
+    display: block;
+  }
+
+  #profile h2 {
+    margin-top: -2rem;
+    font-size: 4rem;
+  }
+
+  #about-briana {
+    margin-top: 3rem;
+  }
+
+  #about-briana h3 {
+    margin-bottom: 1rem;
+  }
+
+  #more-info {
+    display: block;
+  }
+
+  #social-media {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -2.5rem;
+  }
+
+  #social-media h3,
+  #clients h3 {
+    width: 100%;
+    margin-top: 0;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  #social-media ul {
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+    align-items: center;
+  }
+
+  #social-media li {
+    font-size: 2.2rem;
+  }
+
+  #clients h3 {
+    font-size: 2rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  .columns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .columns p {
+    color: black;
+  }
+
+  #about-page-footer {
+    margin-top: -3rem;
+  }
+
+  #contact-form {
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+  }
+
+  #contact-form form {
+    height: auto;
+  }
+
+  #menu-card {
+    width: 100vw;
+    height: 100vh;
+    background: #000942;
+    display: none;
+    position: absolute;
+    top: 81.25px;
+    left: 0;
+    z-index: 1;
+  }
+
+  #menu-card ul {
+    list-style: none;
+    height: 70%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #menu-card a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: 0.3s all;
+    display: inline-block;
+  }
+
+  #menu-card a:hover {
+    font-size: 3.2rem;
+    color: #e32fff;
+  }
+
+  .fa-angle-up {
+    font-size: 1.5rem;
+  }
+}

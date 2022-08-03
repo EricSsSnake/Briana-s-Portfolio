@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7b9cb035d8.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Titillium+Web:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Briana Haynes | About</title>
+  </head>
+  <body style="background-color: white">
+    <nav id="about-page-nav">
+      <a href="">
+        <img src="images/logo.jpg" alt="logo" />
+      </a>
+      <ul>
+        <li id="work"><a href="">work</a></li>
+        <li id="about"><a href="">about</a></li>
+        <li id="menu">
+          <i id="menu-icon" class="fa-solid fa-bars"></i>
+          <i id="close-icon" class="fa-solid fa-xmark"></i>
+        </li>
+      </ul>
+    </nav>
+
+    <main id="about-page-main">
+      <section id="profile">
+        <h2>Portrait<br />Photographer</h2>
+        <img id="pfp" src="images/pfp.jpg" alt="pfp" loading="lazy" />
+      </section>
+      <section id="about-briana">
+        <h3>Briana Haynes</h3>
+        <p>
+          Salt Lake City-based fashion and portrait phtographer who likes to
+          spend much of her time on the road. <br /><br />
+          Capturing emotions is one of the most important parts of my work. I
+          feel strongly about making the photographs that I can connect with.
+          Even though it is the emotions of my subjects that I’m documenting, I
+          find a reflection of myself in their world. <br /><br />
+          Think we could create something together? Feel free to
+          <span id="reach-out"> reach out to me.</span>
+        </p>
+
+        <article id="more-info">
+          <article id="social-media">
+            <h3>see my work featured here</h3>
+            <ul>
+              <li>
+                <a
+                  id="about-twitter"
+                  href="http://twitter.com/home"
+                  target="_blank"
+                  ><i class="fa-brands fa-twitter"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  id="about-instagram"
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-instagram"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  id="about-linkedin"
+                  href="https://www.linkedin.com/"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-linkedin-in"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  id="about-pinterest"
+                  href="https://www.pinterest.com/"
+                  target="_blank"
+                >
+                  <i class="fa-brands fa-pinterest-p"></i
+                ></a>
+              </li>
+            </ul>
+          </article>
+
+          <article id="clients">
+            <h3>clients include</h3>
+            <div class="columns">
+              <p>
+                American Greetings<br />
+                Abrams Books<br />
+                Adobe<br />
+                Apple<br />
+                Bastide<br />
+                Bon Appétit<br />
+                Coach<br />
+                Coca-Cola<br />
+                Condé Nast<br />
+                Dig Inn<br />
+                Disney<br />
+                Facebook<br />
+                Flow Magazine<br />
+              </p>
+              <p>
+                Google<br />
+                Harper Collins<br />
+                I-Weigh<br />
+                Medium<br />
+                New York Times<br />
+                Parks Project<br />
+                Rebel Girls<br />
+                Slack<br />
+                Snapchat<br />
+                Society6<br />
+                Target<br />
+                Twitch<br />
+                YouTube
+              </p>
+            </div>
+          </article>
+        </article>
+      </section>
+    </main>
+
+    <section id="contact-form">
+      <div class="title">
+        <p>Hello!</p>
+        <button id="close-btn">x</button>
+      </div>
+
+      <form action="">
+        <div class="name">
+          <label for="name">Name *</label><br />
+          <div class="name-inputs">
+            <input type="text" id="fname" name="fname" />
+            <input type="text" id="lname" name="lname" /> <br />
+          </div>
+          <label id="fn" for="fname" required>First Name</label>
+          <label id="ln" for="lname" required>Last Name</label>
+        </div>
+
+        <div class="email">
+          <label for="email">Email *</label>
+          <input type="email" name="email" required />
+        </div>
+
+        <div class="subject">
+          <label for="subject">Subject *</label>
+          <input type="text" id="subject" name="subject" required />
+        </div>
+
+        <div class="message">
+          <label for="message">Message *</label>
+          <textarea name="message" id="message" rows="5" required></textarea>
+        </div>
+        <input type="submit" />
+      </form>
+    </section>
+
+    <div id="overlay"></div>
+
+    <section id="menu-card">
+      <ul>
+        <li><a href="">Work</a></li>
+        <li><a id="active" href="">About</a></li>
+      </ul>
+    </section>
+
+    <footer id="about-page-footer">
+      <p>&copy; 2022 Briana Haynes</p>
+    </footer>
+  </body>
+</html>
